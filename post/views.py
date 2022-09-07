@@ -21,8 +21,10 @@ class PostView(APIView):
 
     # 게시글 조회
     def get(self, request):
+        # 조회할 페이지, default = 1
         page = request.GET.get('page', "1")
 
+        # page index 값을 page -1 값으로 전달
         post_list_of_page = post_get_service(int(page)-1)
 
         return Response(post_list_of_page, status=status.HTTP_200_OK)
