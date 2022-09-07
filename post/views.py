@@ -1,13 +1,8 @@
-from mmap import PAGESIZE
 from rest_framework.views import APIView
 from rest_framework import status, exceptions
 from rest_framework.response import Response
 
-
 from post.models import Post as PostModel
-from post.serializers import (
-    PostModelSerializer,
-)
 from post.service.post_service import (
     post_get_service,
     post_create_service,
@@ -15,6 +10,7 @@ from post.service.post_service import (
     post_delete_service,
     post_check_password,
 )
+
 
 # 게시글 CRUD View
 class PostView(APIView):
@@ -89,7 +85,7 @@ class PostView(APIView):
 
         return Response({"error" : "게시글 수정에 실패했습니다."}, status=status.HTTP_400_BAD_REQUEST)
 
-     # 게시글 수정
+    # 게시글 삭제
     def delete(self, request, post_id):
         try:
             post_obj = PostModel.objects.get(id=post_id)
