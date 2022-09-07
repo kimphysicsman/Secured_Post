@@ -78,3 +78,31 @@
 <br>
 
 ## 💻 트러블슈팅
+
+### 1. 게시글 작성 기능 TDD로 구현
+: post_create_service 함수를 TDD로 구현하는데 있어서 익숙하지 않아서 어려움이 많았다.
+
+> 작성 루틴 : `test` 코드 작성 ->  `test` 통과하기 위한 `service` 코드 작성 -> `error` 코드 확인 -> `error` 핸들링 & `test` 통과 확인 -> 코드 리팩토링 
+
+> ex) 
+> 1. `test` 코드 작성  
+> <img width="400" src="https://user-images.githubusercontent.com/68724828/188860253-21cdc394-1c57-4d50-bda5-de154f2bdf9b.png" />  
+
+>2. `test` 통과하기 위한 `service` 코드 작성  
+> <img width="500" src="https://user-images.githubusercontent.com/68724828/188860654-01bc5b67-149d-4e8a-b52e-edb486a0f1a8.png" />  
+
+> 3. `error` 코드 확인  
+> <img width="600" src="https://user-images.githubusercontent.com/68724828/188860984-a3bad1b1-db29-4de6-9968-8e96182a6dfa.png" />  
+
+> 4. `error` 핸들링 & `test` 통과 확인  
+> <img width="600" src="https://user-images.githubusercontent.com/68724828/188861254-c64e60f2-4241-4325-8236-63845e8be86d.png" />  
+> <img width="600" src="https://user-images.githubusercontent.com/68724828/188862309-1cd82a97-d854-4e28-96ad-0ecaa1306a15.png" />  
+
+
+### 2. View Error 메시지 핸들링
+: `service`에서 중요 메소드를 구현하고 `View`에서 `request data`, `response`에 따른 `error`를 핸들링하는데 있어서 `error` 메시지를 처리하는데 어려움이 있었다.
+
+> `try` `except` 구문에서 `exceptions`을 이용해 `error` 메시지 분석 & 핸들링 
+>
+> <img width="600" src="https://user-images.githubusercontent.com/68724828/188863066-e14cb83e-3a0d-426a-8406-a96684419bcd.png" />  
+
